@@ -9,13 +9,26 @@
 
 using namespace std;
 
+class ClassSchedule;
+
 class ClassCourse {
 private:
-    string courseCode;
     string classCode;
+    string courseCode;
+    vector<set<ClassSchedule*>> schedules;
 
 public:
-	ClassCourse();
+    ClassCourse(string courseCode, string classCode);
+//    void addSchedule(ClassSchedule* schedule);
+//    void removeSchedule(ClassSchedule* schedule);
+//    void clearSchedule();
+
+    string getClassCode() const;
+    string getCourseCode() const;
+    vector<set<ClassSchedule*>>& getSchedules();
+
+    bool operator<(ClassCourse uc) const;
+
 
 };
 

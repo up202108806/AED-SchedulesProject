@@ -12,15 +12,24 @@
 using namespace std;
 
 class Student {
+
 private:
-    unsigned int id;
+    int number;
     string name;
-    list<ClassCourse> classes;
-    queue<Request> requests;
+    set<ClassCourse*> enrolledClasses;
 
 public:
-	Student();
+    Student(int number, string name);
+
+    int getNumber() const;
+    string getName() const;
+    set<ClassCourse*> getEnrolledClasses() const;
+
+    void addClass(ClassCourse* newClass);
+    void removeClass(ClassCourse* classToRemove);
+    void clearClasses();
 
 };
+
 
 #endif
